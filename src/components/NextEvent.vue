@@ -7,6 +7,8 @@
         slot-scope="props"
       >Startet in {{ props.days }} Tagen, {{ props.hours }} Stunden, {{ props.minutes }} Minuten und {{ props.seconds }} Sekunden.</template>
     </VueCountdown>
+    <br>
+    <div @click="openEvent" tag="button" class="el-button el-button--primary">Entdecke das Evoent</div>
   </div>
 </template>
 
@@ -57,6 +59,9 @@ export default {
        
         return seconds
 
+      },
+      openEvent() {
+        this.$router.push({ name: "event", params: { slug: this.event.slug } })
       }
   }
 };
