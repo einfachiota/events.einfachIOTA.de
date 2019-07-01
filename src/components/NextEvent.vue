@@ -14,6 +14,8 @@
 import axios from "axios";
 import VueCountdown from "@chenfengyuan/vue-countdown";
 
+const PROVIDER = process.env.VUE_APP_EVENT_PROVIDER;
+
 export default {
   name: "NextEvent",
   components: { VueCountdown }, 
@@ -27,8 +29,7 @@ export default {
   created() {
     let self = this;
     axios
-      //.get(`https://events.worldofmind.org/next_event.json`)
-      .get(`http://localhost:3000/next_event.json`)
+      .get(`${PROVIDER}/next_event.json`)
       .then(response => {
         // JSON responses are automatically parsed.
         console.log(response);
