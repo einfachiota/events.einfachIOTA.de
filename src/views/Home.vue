@@ -6,6 +6,24 @@
       <p class="sub-heading">Die Seite, mit allen Events Rund um IOTA!</p>
     </div>
 
+     <div class="section section-background knowledge">
+      <div class="container">
+        <h2>Nächstes Event</h2>
+        <NextEvent />
+      </div>
+    </div>
+
+    <div class="section events">
+      <div class="container">
+        <div class="headline-wrapper">
+          <h2>Nächste Events</h2>
+          <a href="https://www.einfachiota.de/#/news" target="_blank" tag="button" class="el-button el-button--primary">Alle Neuigkeiten</a>
+        </div>
+        <div class="divider"></div>
+        <LatestNews/>
+      </div>
+    </div>
+
     <div class="section section-background knowledge">
       <div class="container">
         <h2>Du bist neu bei IOTA?</h2>
@@ -59,12 +77,14 @@
 
 <script>
 // @ is an alias to /src
+import NextEvent from "@/components/NextEvent.vue";
+import NextEvents from "@/components/NextEvents.vue";
 import LatestNews from "@/components/LatestNews.vue";
 
 export default {
   name: "home",
   components: {
-    LatestNews
+    NextEvent, NextEvents, LatestNews
   }
 };
 </script>
